@@ -50,7 +50,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)actionEditButtonPressed
@@ -93,7 +92,6 @@
     Course *course = [[self.instructor.courses allObjects] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = course.name;
-    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }

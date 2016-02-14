@@ -9,12 +9,14 @@
 #import "CoursesViewController.h"
 #import "AddCourseViewController.h"
 #import "CourseProfileViewController.h"
+
 #import "Course+CoreDataProperties.h"
 
 
 @interface CoursesViewController ()
 
 @end
+
 
 @implementation CoursesViewController
 
@@ -79,6 +81,7 @@
 }
 
 
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,6 +89,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"CourseProfileSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
 }
+
 
 
 #pragma mark - UITableViewDataSource
@@ -99,6 +103,7 @@
 }
 
 
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -107,6 +112,7 @@
         UINavigationController *navigationController = segue.destinationViewController;
         AddCourseViewController *addCourseVC = (AddCourseViewController *)navigationController.topViewController;
         addCourseVC.viewMode = AddMode;
+        
     } else if ([segue.identifier isEqualToString:@"CourseProfileSegue"]) {
         CourseProfileViewController *profileVC = (CourseProfileViewController *)segue.destinationViewController;
         UITableViewCell *cell = (UITableViewCell *)sender;

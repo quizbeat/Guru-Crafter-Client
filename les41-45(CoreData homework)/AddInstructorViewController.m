@@ -9,6 +9,7 @@
 #import "AddInstructorViewController.h"
 #import "UIAlertController+ErrorAlert.h"
 #import "EntityInfoCell.h"
+
 #import "CoreDataManager.h"
 #import "Course+CoreDataProperties.h"
 

@@ -7,13 +7,16 @@
 //
 
 #import "InstructorsViewController.h"
-#import "Instructor+CoreDataProperties.h"
 #import "AddInstructorViewController.h"
 #import "InstructorProfileViewController.h"
+
+#import "Instructor+CoreDataProperties.h"
+
 
 @interface InstructorsViewController ()
 
 @end
+
 
 @implementation InstructorsViewController
 
@@ -39,6 +42,7 @@
 {
     [NSFetchedResultsController deleteCacheWithName:@"Instructors"];
 }
+
 
 
 #pragma mark - Core Data support
@@ -79,6 +83,7 @@
 }
 
 
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,6 +91,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"InstructorProfileSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
 }
+
 
 
 #pragma mark - UITableViewDataSource
@@ -97,6 +103,7 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld courses", [instructor.courses count]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
+
 
 
 #pragma mark - Navigation
